@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>竞彩网 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f5f9fc;
+            color: #1e2b3a;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* ---------- hero ---------- */
+        .hero {
+            background: linear-gradient(145deg, #d9eee8 0%, #b6d5cd 100%);
+            border-radius: 2.5rem;
+            padding: 2.5rem 2rem 3rem;
+            margin: 2rem 0 2.5rem;
+            box-shadow: 0 8px 24px rgba(34, 98, 98, 0.08);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #114b4b;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            background: #ffffffaa;
+            padding: 0.1rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.7em;
+            vertical-align: middle;
+            margin-left: 0.3rem;
+            color: #1a5a5a;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #1c4d4d;
+            max-width: 640px;
+            margin: 0.25rem auto 1.2rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #ffffffc0;
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            color: #0c4545;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,50,50,0.05);
+        }
+
+        /* ---------- grid cards (优势区) ---------- */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem 1.5rem 1.6rem;
+            box-shadow: 0 6px 14px rgba(34, 85, 85, 0.06);
+            transition: transform 0.15s ease, box-shadow 0.2s;
+            border: 1px solid #e2f0eb;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(34, 85, 85, 0.1);
+        }
+
+        .card .emoji-badge {
+            display: inline-block;
+            background: #d2efe6;
+            width: 44px;
+            height: 44px;
+            border-radius: 18px;
+            line-height: 44px;
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0a3d3d;
+            margin-bottom: 0.3rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2f4b4b;
+        }
+
+        /* ---------- 说明区 (简明指南) ---------- */
+        .guide-section {
+            background: white;
+            border-radius: 2.5rem;
+            padding: 2.2rem 2rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 14px rgba(0, 40, 40, 0.04);
+            border-left: 5px solid #429e9e;
+        }
+
+        .guide-section h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #0f4a4a;
+            margin-bottom: 1.2rem;
+        }
+
+        .guide-section ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .guide-section ul li {
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.98rem;
+            color: #1b4747;
+        }
+
+        .guide-section ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0.3rem;
+            color: #388f8f;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .guide-section .note {
+            background: #eff8f4;
+            padding: 1rem 1.4rem;
+            border-radius: 1.8rem;
+            font-size: 0.95rem;
+            color: #1e5555;
+            border: 1px solid #cae1da;
+        }
+
+        .guide-section .note a {
+            color: #116f6f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-summary {
+            background: white;
+            border-radius: 2.5rem;
+            padding: 2rem 2rem 1.8rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 14px rgba(0,40,40,0.04);
+        }
+
+        .faq-summary h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #0f4a4a;
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2ede8;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #175858;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            color: #2b5555;
+            padding-left: 0.2rem;
+        }
+
+        .faq-a a {
+            color: #0f6f6f;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* ---------- 底部链接 ---------- */
+        .footer-links {
+            background: #e2f1eb;
+            border-radius: 3rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            margin-top: 1rem;
+            color: #154f4f;
+        }
+
+        .footer-links p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a {
+            color: #0b5b5b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #3f8f8f;
+        }
+
+        .footer-links a:hover {
+            border-bottom-style: solid;
+        }
+
+        .footer-links .muted {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 2rem 1.5rem;
+                border-radius: 2rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .card {
+                padding: 1.3rem 1rem;
+                border-radius: 1.5rem;
+            }
+            .guide-section, .faq-summary, .footer-links {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+                border-radius: 2rem;
+            }
+            .guide-section ul {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>竞彩网<span>· 简明指南</span></h1>
+        <p>了解资讯、关注提醒，让每一次浏览都更清晰。</p>
+        <div class="tagline">🧭 先看说明 · 再浏览内容</div>
+    </div>
+
+    <!-- 优势区：网格卡片 -->
+    <div class="grid-cards">
+        <div class="card">
+            <div class="emoji-badge">📋</div>
+            <h3>信息清晰</h3>
+            <p>分类展示，重点突出，减少无关干扰。</p>
+        </div>
+        <div class="card">
+            <div class="emoji-badge">🔍</div>
+            <h3>自主判断</h3>
+            <p>提供基础事实，帮助用户自行分析。</p>
+        </div>
+        <div class="card">
+            <div class="emoji-badge">🛡️</div>
+            <h3>访问提醒</h3>
+            <p>注意甄别来源，保护个人信息安全。</p>
+        </div>
+        <div class="card">
+            <div class="emoji-badge">📱</div>
+            <h3>移动适配</h3>
+            <p>手机与平板均可流畅阅读，随时可用。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：简明指南 + 访问提醒 -->
+    <div class="guide-section">
+        <h2>🔹 使用前的几点说明</h2>
+        <ul>
+            <li>请确认网络环境安全，避免使用公共设备保存账户信息。</li>
+            <li>浏览时注意核对页面地址，认准官方来源。</li>
+            <li>所有资讯仅供个人参考，不构成任何形式建议。</li>
+            <li>理性对待内容，保持适度。</li>
+        </ul>
+        <div class="note">
+            💡 想获取更多背景信息？推荐直接访问 <a href="https://zhm-jingcai.com">竞彩网</a>，了解最新动态与官方说明。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>❓ 常见问题摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">如何确认我访问的是正确网站？</div>
+            <div class="faq-a">请以浏览器地址栏显示的域名为准。本次介绍的站点为 <a href="https://zhm-jingcai.com">竞彩网</a>，建议手动输入或从可靠收藏夹进入。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面内容是否会随时更新？</div>
+            <div class="faq-a">信息具有时效性，建议定期查看官方页面以获得最新内容。你可以把 <a href="https://zhm-jingcai.com">竞彩网</a> 加入书签方便回访。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">遇到可疑链接怎么办？</div>
+            <div class="faq-a">不要点击来历不明的短链或仿冒地址，始终通过正规渠道访问。如有疑问，可先核对网站标题和域名。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p>📎 相关资源 · <a href="https://zhm-jingcai.com">竞彩网</a></p>
+        <p style="font-size:0.9rem;">内容仅供信息参考，请自行核实与判断。</p>
+        <div class="muted">— 保持清醒，安全浏览 —</div>
+    </div>
+
+</div>
+</body>
+</html>
